@@ -1,0 +1,15 @@
+{
+  "name": "devcontainer-sis-int",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    // Docker-in-Docker permite construir e executar imagens no ambiente isolado.
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": false
+    },
+  },
+  // Necessário para o daemon Docker interno funcionar corretamente.
+  "privileged": true,
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Local runtime state
+data/
+.cluster-leader
+*.log
+
+# Local tooling
+.vscode/
+.idea/
+
+# Internal reference material
+refs/
+
+# Generated or temporary files
+*.tmp
+*.swp
+dist/
+build/

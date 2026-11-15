@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pull-replication-grpc"
+version = "0.1.0"
+description = "Replicacao distribuida pull-based com eleicao e gRPC"
+requires-python = ">=3.11"
+dependencies = [
+  "grpcio>=1.66,<2",
+  "protobuf>=5.27,<6",
+]
+
+[project.optional-dependencies]
+dev = ["grpcio-tools>=1.66,<2", "pytest>=8.0,<9"]
+
+[project.scripts]
+cluster-node = "cluster.node:main"
+cluster-client = "cluster.client:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+include = ["cluster*"]
